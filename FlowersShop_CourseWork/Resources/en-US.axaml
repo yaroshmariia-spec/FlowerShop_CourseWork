@@ -1,0 +1,50 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    
+    <system:String x:Key="SettingsTitle">Settings</system:String>
+    <system:String x:Key="ThemeLabel">App Appearance</system:String>
+    <system:String x:Key="DarkThemeLabel">Dark Theme</system:String>
+    <system:String x:Key="LocalizationLabel">Localization</system:String>
+    <system:String x:Key="LanguageLabel">Language</system:String>
+    <system:String x:Key="OnText">On</system:String>
+    <system:String x:Key="OffText">Off</system:String>
+    <system:String x:Key="Welcome">Welcome to the Flower Shop!!!</system:String>
+    <system:String x:Key="MenuMain">Main</system:String>
+    <system:String x:Key="MenuCatalog">Catalog of goods</system:String>
+    <system:String x:Key="MenuSetting">Settings</system:String>
+    <system:String x:Key="CatalogSearch">🔍 Search by name...</system:String>
+    <system:String x:Key="CatalogAddProduct">+ Add product</system:String>
+    <system:String x:Key="CatalogDelete">Delete selected</system:String>
+    <system:String x:Key="CatalogCard">Product card</system:String>
+    <system:String x:Key="CatalogName">Name::</system:String>
+    <system:String x:Key="CatalogCategory">Category::</system:String>
+    <system:String x:Key="CatalogPrice">Price (UAH)::</system:String>
+    <system:String x:Key="CatalogRemaining">Remainder in stock::</system:String>
+    <system:String x:Key="CatalogSave">Save:</system:String>
+    <system:String x:Key="CatalogCancel">Cancel:</system:String>
+    <system:String x:Key="DashBoardTotalProducts">Total products in the catalog:</system:String>
+    <system:String x:Key="DashBoardOrder">New orders:</system:String>
+    <system:String x:Key="SettingManagement">Account management:</system:String>
+    <system:String x:Key="LogOut">Вийти з акаунта:</system:String>
+    <system:String x:Key="Version">Program version: 1.0.0</system:String>
+    <system:String x:Key="DashBoardGoTo">Go to flowers →</system:String>
+    <system:String x:Key="CartMyBasket">My Basket</system:String>
+    <system:String x:Key="CartStock">In stock</system:String>
+    <system:String x:Key="CartSummary">Order summary</system:String>
+    <system:String x:Key="CartPayable">Total payable:</system:String>
+    <system:String x:Key="CartMakeOrder">Make an order</system:String>
+    <system:String x:Key="CartFreeDelivery">Free delivery from 2000 UAH</system:String>
+    <system:String x:Key="OrdersManagement">Order management</system:String>
+    <system:String x:Key="OrdersNewOrder">New orders</system:String>
+    <system:String x:Key="OrdersTakeToWork">Take to work</system:String>
+    <system:String x:Key="OrdersReadyToShip">Ready to ship</system:String>
+    <system:String x:Key="OrdersCompleted">Completed</system:String>
+    <system:String x:Key="StoreShopWindow">ShopWindow</system:String>
+    <system:String x:Key="OrdersHIT">HIT</system:String>
+    <system:String x:Key="OrdersInBasket">In the basket</system:String>
+    <system:String x:Key="OrdersProgress">In processing</system:String>
+    <system:String x:Key="MenuOrder">Order</system:String>
+    <system:String x:Key="MenuShowCase">Showcase</system:String>
+    
+</ResourceDictionary>

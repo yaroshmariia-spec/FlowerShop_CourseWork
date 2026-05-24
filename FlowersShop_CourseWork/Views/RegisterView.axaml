@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+             x:DataType="vm:RegisterViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FlowersShop_CourseWork.Views.RegisterView">
+    
+    <Border Classes="Card" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Spacing="15">
+            <TextBlock Text="Реєстрація" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+        
+            <TextBox Text="{Binding Email}" Watermark="Email" />
+            <TextBox Text="{Binding Password}" PasswordChar="*" Watermark="Пароль" />
+        
+            <ToggleSwitch IsChecked="{Binding IsAdmin}" OnContent="Адміністратор" OffContent="Користувач" />
+        
+            <Button Classes="Primary" Content="Створити акаунт" Command="{Binding RegisterCommand}" HorizontalAlignment="Stretch" />
+        
+            <Button Content="Вже є акаунт? Увійти" Background="Transparent" HorizontalAlignment="Center" 
+                    Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ShowLoginCommand}"/>
+        </StackPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="FlowersShop/App.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Resources/en-US.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Resources/en-US.axaml.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Resources/uk-UA.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Resources/uk-UA.axaml.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/CartView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/CatalogView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/DashboardView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/LoginView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/MainWindow.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/OrdersView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/Pages/DashboardView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/RegisterView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/SettingsView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop/Views/StorefrontView.axaml" value="FlowersShop/FlowersShop.csproj" />
+        <entry key="FlowersShop_CourseWork/App.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Resources/en-US.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Resources/uk-UA.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/CartView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/CatalogView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/DashboardView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/LoginView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/MainWindow.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/OrdersView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/RegisterView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/SettingsView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+        <entry key="FlowersShop_CourseWork/Views/StorefrontView.axaml" value="FlowersShop_CourseWork/FlowersShop_CourseWork.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

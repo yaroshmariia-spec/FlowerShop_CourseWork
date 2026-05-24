@@ -1,0 +1,50 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    
+    <system:String x:Key="SettingsTitle">Налаштування</system:String>
+    <system:String x:Key="ThemeLabel">Вигляд програми</system:String>
+    <system:String x:Key="Welcome">Ласкаво просимо до Магазину квітів!!!</system:String>
+    <system:String x:Key="DarkThemeLabel">Темна тема</system:String>
+    <system:String x:Key="LocalizationLabel">Локалізація</system:String>
+    <system:String x:Key="LanguageLabel">Мова</system:String>
+    <system:String x:Key="OnText">Увімкнено</system:String>
+    <system:String x:Key="OffText">Вимкнено</system:String>
+    <system:String x:Key="MenuMain">Головна</system:String>
+    <system:String x:Key="MenuCatalog">Каталог товарів</system:String>
+    <system:String x:Key="MenuSetting">Налаштування</system:String>
+    <system:String x:Key="CatalogSearch">🔍 Пошук за назвою...</system:String>
+    <system:String x:Key="CatalogAddProduct">+ Додати товар</system:String>
+    <system:String x:Key="CatalogDelete">Видалити обране</system:String>
+    <system:String x:Key="CatalogCard">Картка товару</system:String>
+    <system:String x:Key="CatalogName">Назва::</system:String>
+    <system:String x:Key="CatalogCategory">Категорія::</system:String>
+    <system:String x:Key="CatalogPrice">Ціна (грн)::</system:String>
+    <system:String x:Key="CatalogRemaining">Залишок на складі::</system:String>
+    <system:String x:Key="CatalogSave">Зберегти:</system:String>
+    <system:String x:Key="CatalogCancel">Скасувати:</system:String>
+    <system:String x:Key="DashBoardTotalProducts">Всього товарів у каталозі:</system:String>
+    <system:String x:Key="DashBoardOrder">Нові замовлення:</system:String>
+    <system:String x:Key="SettingManagement">Керування акаунтом:</system:String>
+    <system:String x:Key="LogOut">Вийти з акаунта:</system:String>
+    <system:String x:Key="Version">Версія програми: 1.0.0</system:String>
+    <system:String x:Key="DashBoardGoTo">Перейти до квітів →</system:String>
+    <system:String x:Key="CartMyBasket">Мій Кошик</system:String>
+    <system:String x:Key="CartStock">В наявності</system:String>
+    <system:String x:Key="CartSummary">Підсумок замовлення</system:String>
+    <system:String x:Key="CartPayable">Разом до сплати:</system:String>
+    <system:String x:Key="CartMakeOrder">Оформити замовлення</system:String>
+    <system:String x:Key="CartFreeDelivery">Безкоштовна доставка від 2000 грн</system:String>
+    <system:String x:Key="OrdersManagement">Управління замовленнями</system:String>
+    <system:String x:Key="OrdersNewOrder">Нові замовлення</system:String>
+    <system:String x:Key="OrdersTakeToWork">Взяти в роботу</system:String>
+    <system:String x:Key="OrdersReadyToShip">Готово до відправки</system:String>
+    <system:String x:Key="OrdersCompleted">Завершені</system:String>
+    <system:String x:Key="StoreShopWindow">Вітрина магазину</system:String>
+    <system:String x:Key="OrdersHIT">ХІТ</system:String>
+    <system:String x:Key="OrdersInBasket">В кошик</system:String>
+    <system:String x:Key="OrdersProgress">В обробці</system:String>
+    <system:String x:Key="MenuOrder">Замовлення</system:String>
+    <system:String x:Key="MenuShowCase">Вітрина</system:String>
+    
+</ResourceDictionary>

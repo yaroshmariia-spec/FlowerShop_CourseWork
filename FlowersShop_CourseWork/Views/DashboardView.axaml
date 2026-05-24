@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FlowersShop_CourseWork.Views.DashboardView">
+    
+    <Grid RowDefinitions="Auto, *" Margin="20">
+        
+        <Border Grid.Row="0" Background="{DynamicResource BrandLightPinkBrush}" CornerRadius="15" Padding="30" Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Welcome}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding CurrentDate}" FontSize="16" Foreground="#FFF0F5"/>
+            </StackPanel>
+        </Border>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="20">
+            <Border Background="White" CornerRadius="10" Padding="20" Width="250" 
+                    BoxShadow="0 4 10 0 #20000000">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource DashBoardTotalProducts}" FontSize="14" Foreground="Gray" Margin="0,0,0,10"/>
+                    <TextBlock Text="{Binding TotalFlowers}" FontSize="42" FontWeight="Black" Foreground="#87CEFA"/>
+                    <Button Content="{DynamicResource DashBoardGoTo}" 
+                            Classes="Primary" 
+                            Background="White" 
+                            Foreground="{DynamicResource BrandPinkBrush}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" 
+                            Padding="20,10"
+                            Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).NavigateToCommand}"
+                            CommandParameter="Catalog"/>
+                </StackPanel>
+            </Border>
+            
+            <Border Background="White" CornerRadius="10" Padding="20" Width="250" 
+                    BoxShadow="0 4 10 0 #20000000">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource DashBoardOrder}" FontSize="14" Foreground="Gray" Margin="0,0,0,10"/>
+                    <TextBlock Text="{Binding ActiveOrders}" FontSize="42" FontWeight="Black" Foreground="#87CEFA"/>
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

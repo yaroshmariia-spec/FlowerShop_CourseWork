@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+             x:DataType="vm:CartViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FlowersShop_CourseWork.Views.CartView">
+    
+    <Grid RowDefinitions="Auto, *" Margin="20">
+        <TextBlock Grid.Row="0" Text="{DynamicResource CartMyBasket}" FontSize="28" FontWeight="Bold" 
+                   Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, 300">
+            <ItemsControl Grid.Column="0" ItemsSource="{Binding Items}" Margin="0,0,20,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Classes="Card" Margin="0,0,0,10">
+                            <Grid ColumnDefinitions="*, Auto, Auto">
+                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="18"/>
+                                    <TextBlock Text="{DynamicResource CartStock}" Foreground="{DynamicResource BrandGreenBrush}" FontSize="12"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="{Binding Quantity, StringFormat='{}К-ть: {0}'}" VerticalAlignment="Center" Margin="20,0"/>
+                                <TextBlock Grid.Column="2" Text="{Binding Price}" FontWeight="Bold" Foreground="{DynamicResource BrandPinkBrush}" FontSize="18" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Border Grid.Column="1" Classes="Card" VerticalAlignment="Top" Background="{DynamicResource SystemListLowColor}">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="{DynamicResource CartSummary}" FontWeight="Bold" FontSize="18"/>
+                    <Rectangle Height="1" Fill="{DynamicResource SystemBaseMediumColor}" Opacity="0.3"/>
+                    
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Grid.Column="0" Text="{DynamicResource CartPayable}" Foreground="{DynamicResource SystemBaseMediumColor}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding TotalSum}" FontWeight="Black" FontSize="20" Foreground="{DynamicResource BrandPinkBrush}"/>
+                    </Grid>
+
+                    <Button Classes="Primary" Content="{DynamicResource CartMakeOrder}" HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
+                    <TextBlock Text="{DynamicResource CartFreeDelivery}" FontSize="11" Foreground="Gray" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FlowersShop_CourseWork.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="FlowersShop_CourseWork">
+
+    <Grid ColumnDefinitions="Auto, *">
+
+        <Border Grid.Column="0" Width="250"
+                IsVisible="{Binding IsLoggedIn}"
+                Background="{DynamicResource SystemListLowColor}"
+                BorderBrush="{DynamicResource BrandLightPinkBrush}"
+                BorderThickness="0,0,1,0">
+            <Grid RowDefinitions="*, Auto" Margin="15, 30">
+                <StackPanel Grid.Row="0" Spacing="15">
+                    <TextBlock Text="FlowersShop_CourseWork" FontWeight="Bold" FontSize="18"
+                               Foreground="{DynamicResource BrandPinkBrush}" Margin="5,0,0,20" />
+
+                    <Button Content="{DynamicResource MenuMain}" Command="{Binding NavigateToCommand}"
+                            CommandParameter="Dashboard"
+                            HorizontalAlignment="Stretch" Background="Transparent"
+                            Foreground="{DynamicResource SystemBaseHighColor}" FontSize="16" />
+                    <Button Content="{DynamicResource MenuCatalog}" Command="{Binding NavigateToCommand}"
+                            CommandParameter="Catalog"
+                            HorizontalAlignment="Stretch" Background="Transparent"
+                            Foreground="{DynamicResource SystemBaseHighColor}" FontSize="16" />
+                    <Button Content="{DynamicResource MenuOrder}" IsVisible="{Binding IsAdmin}"
+                            Command="{Binding NavigateToCommand}" CommandParameter="Orders" FontSize="16"
+                            HorizontalAlignment="Stretch" Background="Transparent"
+                            Foreground="{DynamicResource SystemBaseHighColor}" />
+                    <Button Content="{DynamicResource MenuShowCase}" IsVisible="{Binding !IsAdmin}" FontSize="16"
+                            Command="{Binding NavigateToCommand}" CommandParameter="Storefront" 
+                            HorizontalAlignment="Stretch" Background="Transparent" Foreground="{DynamicResource SystemBaseHighColor}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Spacing="10">
+                    <Rectangle Height="1" Fill="{DynamicResource BrandLightPinkBrush}" Opacity="0.5" Margin="0,10"/>
+                    <Button Content="{DynamicResource CartMyBasket}" Command="{Binding NavigateToCommand}"
+                            IsVisible="{Binding !IsAdmin}" CommandParameter="Cart" FontSize="16"
+                            HorizontalAlignment="Stretch" Background="Transparent"
+                            Foreground="{DynamicResource SystemBaseHighColor}" />
+                    <Button Content="{DynamicResource MenuSetting}" Command="{Binding NavigateToCommand}"
+                            CommandParameter="Settings"
+                            HorizontalAlignment="Stretch" Background="Transparent"
+                            Foreground="{DynamicResource SystemBaseHighColor}" FontSize="16" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <TransitioningContentControl Grid.Column="1" Content="{Binding CurrentView}">
+            <TransitioningContentControl.PageTransition>
+                <CrossFade Duration="0:0:0.3" />
+            </TransitioningContentControl.PageTransition>
+        </TransitioningContentControl>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+             x:DataType="vm:SettingsViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FlowersShop_CourseWork.Views.SettingsView">
+    
+    <Grid RowDefinitions="Auto, *" Margin="20">
+        
+        <TextBlock Grid.Row="0" Text="{DynamicResource SettingsTitle}" FontSize="28" FontWeight="Bold" 
+                   Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Spacing="20" Width="400" HorizontalAlignment="Left">
+            
+            <Border Classes="Card">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource ThemeLabel}" FontWeight="SemiBold" 
+                               Foreground="{DynamicResource SystemBaseMediumColor}" Margin="0,0,0,15"/>
+                    
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Grid.Column="0" Text="{DynamicResource DarkThemeLabel}" FontSize="16" 
+                                   Foreground="{DynamicResource SystemBaseHighColor}" VerticalAlignment="Center"/>
+                        
+                        <ToggleSwitch Grid.Column="1" IsChecked="{Binding IsDarkTheme}" 
+                                      OnContent="{DynamicResource OnText}" OffContent="{DynamicResource OffText}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Border Classes="Card">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource LocalizationLabel}" FontWeight="SemiBold" 
+                               Foreground="{DynamicResource SystemBaseMediumColor}" Margin="0,0,0,15"/>
+                    
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Grid.Column="0" Text="{DynamicResource LanguageLabel}" FontSize="16" 
+                                   Foreground="{DynamicResource SystemBaseHighColor}" VerticalAlignment="Center"/>
+                        
+                        <ComboBox Grid.Column="1" Width="150" 
+                                  ItemsSource="{Binding Languages}" 
+                                  SelectedItem="{Binding SelectedLanguage}" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+            <Border Classes="Card">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="{DynamicResource SettingManagement}" FontWeight="SemiBold" 
+                               Foreground="{DynamicResource SystemBaseMediumColor}"/>
+                    
+                    <Button Classes="Secondary" Content="{DynamicResource LogOut}" 
+                            HorizontalAlignment="Stretch"
+                            Background="#FF4B4B" Foreground="White"
+                            Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).LogoutCommand}"/>
+                    
+                    <TextBlock Text="{DynamicResource Version}" FontSize="10" 
+                               Foreground="Gray" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,87 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="FlowersShop_CourseWork.App"
+             xmlns:local="using:FlowersShop_CourseWork"
+             RequestedThemeVariant="Light">
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://FlowersShop_CourseWork/Resources/uk-UA.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+  
+    <Application.Styles>
+        <FluentTheme />
+        <Style>
+            <Style.Resources>
+                <SolidColorBrush x:Key="BrandPinkBrush">#FF69B4</SolidColorBrush>
+                <SolidColorBrush x:Key="BrandLightPinkBrush">#FFB6C1</SolidColorBrush>
+                <SolidColorBrush x:Key="BrandGreenBrush">#32CD32</SolidColorBrush>
+                <SolidColorBrush x:Key="BrandGrayBrush">#A9A9A9</SolidColorBrush>
+            </Style.Resources>
+        </Style>
+
+        <Style Selector="Button.Primary">
+            <Setter Property="Background" Value="{DynamicResource BrandPinkBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.Primary:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#FF1493"/> </Style>
+
+        <Style Selector="Button.Secondary">
+            <Setter Property="Background" Value="{DynamicResource BrandLightPinkBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Border.Card">
+            <Setter Property="Background" Value="{DynamicResource SystemRegionBrush}"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="BoxShadow" Value="0 2 10 0 #10000000"/>
+        </Style>
+        <Style Selector="Border.Card:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SystemListLowColor}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BoxShadow" Value="0 5 15 0 #20000000"/>
+        </Style>
+        
+        
+        <Style Selector="Border.Card">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" Easing="CubicEaseOut"/>
+                    <BoxShadowsTransition Property="BoxShadow" Duration="0:0:0.2" Easing="CubicEaseOut"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Border.Card:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.03)"/>
+            <Setter Property="BoxShadow" Value="0 10 20 0 #30000000"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" Easing="CircularEaseOut"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        </Style>
+    </Application.Styles>
+</Application>
