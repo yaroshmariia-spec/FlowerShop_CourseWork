@@ -8,12 +8,24 @@
              x:Class="FlowersShop_CourseWork.Views.StorefrontView">
     
     <ScrollViewer>
-        <Grid RowDefinitions="Auto, *" Margin="20">
+        <Grid RowDefinitions="Auto, Auto, *" Margin="20">
             
             <TextBlock Grid.Row="0" Text="{DynamicResource StoreShopWindow}" FontSize="28" FontWeight="Bold" 
                        Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,20"/>
-
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding Products}">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="15" Margin="0, 0, 0, 20">
+            
+                <TextBox Text="{Binding SearchText}" 
+                         Watermark="Пошук за назвою..." 
+                         Width="300" 
+                         CornerRadius="5"/>
+            
+                <ComboBox ItemsSource="{Binding Categories}" 
+                          SelectedItem="{Binding SelectedCategory}" 
+                          Width="200" 
+                          CornerRadius="5"/>
+                      
+            </StackPanel>
+            <ItemsControl Grid.Row="2" ItemsSource="{Binding Products}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" />
@@ -22,28 +34,35 @@
                 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Classes="Card" Width="220" Margin="0,0,20,20" Background="{DynamicResource SystemRegionBrush}">
+                        <Border Classes="Card" Width="220" Margin="0, 0, 20, 20" Background="{DynamicResource SystemRegionBrush}">
                             <StackPanel>
-                                <Border Height="180" Background="{DynamicResource SystemListLowColor}" CornerRadius="8" Margin="0,0,0,15">
+                
+                                <Border Height="180" Background="{DynamicResource SystemListLowColor}" CornerRadius="8" Margin="0, 0, 0, 15">
                                     <Grid>
-                                        <Border IsVisible="{Binding IsHit}" Background="#FFD700" CornerRadius="5" 
-                                                Padding="8,4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                                        <Border IsVisible="False" Background="#FFD700" CornerRadius="5"
+                                                Padding="8, 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
                                             <TextBlock Text="ХІТ" FontWeight="Bold" FontSize="10" Foreground="Black"/>
                                         </Border>
-                                        <TextBlock Text="{Binding Emoji}" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        
+                                        <TextBlock Text="🌸" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Grid>
                                 </Border>
-                                
-                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5" TextWrapping="Wrap"/>
-                                <TextBlock Text="{Binding Rating}" Foreground="#FFD700" FontSize="14" Margin="0,0,0,10"/>
-                                
-                                <Grid ColumnDefinitions="*, Auto" Margin="0,5,0,0">
-                                    <TextBlock Grid.Column="0" Text="{Binding Price}" FontWeight="Black" FontSize="18" 
+                
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16" Margin="0, 0, 0, 5" TextWrapping="Wrap"/>
+                
+                                <TextBlock Text="⭐⭐⭐⭐⭐" Foreground="#FFD700" FontSize="14" Margin="0, 0, 0, 10"/>
+                
+                                <Grid ColumnDefinitions="*, Auto" Margin="0, 5, 0, 0">
+                                    <TextBlock Grid.Column="0" Text="{Binding Price, StringFormat='{}{0} грн.'}" 
+                                               FontWeight="Black" FontSize="18"
                                                Foreground="{DynamicResource BrandPinkBrush}" VerticalAlignment="Center"/>
-                                    <Button Grid.Column="1" Classes="Primary" Content="{DynamicResource OrdersInBasket}" 
-                                            Command="{Binding $parent[UserControl].((vm:StorefrontViewModel)DataContext).AddToCartCommand}" 
-                                            CommandParameter="{Binding}" Padding="10,5"/>
+                    
+                                    <Button Grid.Column="1" Classes="Primary" Content="В кошик"
+                                            Command="{Binding $parent[UserControl].((vm:StorefrontViewModel)DataContext).AddToCartCommand}"
+                                            CommandParameter="{Binding}"    
+                                            Padding="10, 5"/>
                                 </Grid>
+                
                             </StackPanel>
                         </Border>
                     </DataTemplate>
