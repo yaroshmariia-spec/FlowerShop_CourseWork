@@ -17,7 +17,7 @@
                 BorderThickness="0,0,1,0">
             <Grid RowDefinitions="*, Auto" Margin="15, 30">
                 <StackPanel Grid.Row="0" Spacing="15">
-                    <TextBlock Text="FlowersShop_CourseWork" FontWeight="Bold" FontSize="18"
+                    <TextBlock Text="FlowersShop" FontWeight="Bold" FontSize="18"
                                Foreground="{DynamicResource BrandPinkBrush}" Margin="5,0,0,20" />
 
                     <Button Content="{DynamicResource MenuMain}" Command="{Binding NavigateToCommand}"

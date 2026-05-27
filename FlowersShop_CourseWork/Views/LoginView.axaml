@@ -10,7 +10,7 @@
     <Grid Background="{DynamicResource SystemRegionBrush}">
         <Border Classes="Card" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Spacing="15">
-                <TextBlock Text="FlowersShop_CourseWork" FontSize="26" FontWeight="Black" 
+                <TextBlock Text="FlowersShop" FontSize="26" FontWeight="Black" 
                            Foreground="{DynamicResource BrandPinkBrush}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
                 <TextBlock Text="Електронна пошта" Foreground="Gray" FontSize="12"/>
@@ -25,9 +25,8 @@
                         Background="Transparent" Foreground="Gray" FontSize="11" 
                         HorizontalAlignment="Center" Margin="0,5,0,0"
                         Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ShowRegistrationCommand}"/>
-
-                <Button Content="Забули пароль?" Background="Transparent" Foreground="Gray" 
-                        FontSize="11" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center"
+                           FontWeight="Black" FontSize="14"/>
             </StackPanel>
         </Border>
     </Grid>

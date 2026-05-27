@@ -20,6 +20,8 @@
         
             <Button Content="Вже є акаунт? Увійти" Background="Transparent" HorizontalAlignment="Center" 
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ShowLoginCommand}"/>
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center"
+                       FontWeight="Black" FontSize="14"/>
         </StackPanel>
     </Border>
 </UserControl>
