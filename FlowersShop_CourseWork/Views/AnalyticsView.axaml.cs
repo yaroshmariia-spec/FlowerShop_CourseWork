@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace FlowersShop_CourseWork.Views;
 
-public partial class OrdersView : UserControl
+public partial class AnalyticsView : UserControl
 {
-    public OrdersView()
+    public AnalyticsView()
     {
         InitializeComponent();
     }

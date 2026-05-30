@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:FlowersShop_CourseWork.ViewModels"
+             xmlns:models="using:FlowersShop_CourseWork.Models"
+             x:DataType="vm:AnalyticsViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FlowersShop_CourseWork.Views.AnalyticsView">
+    
+    <Grid RowDefinitions="Auto, *, *" Margin="20">
+        
+        <Border Grid.Row="0" Background="{DynamicResource SystemRegionBrush}" CornerRadius="10" Padding="20">
+            <StackPanel Spacing="10">
+                <TextBlock Text="Інтелектуальний аналіз складу" FontWeight="Bold" FontSize="24"/>
+                <TextBlock Text="Алгоритм проаналізує залишки, виявить зіпсовані/прострочені квіти, спише їх та згенерує звіт." TextWrapping="Wrap"/>
+                
+                <Button Classes="Primary" Content="Провести смарт-аналіз та списання" 
+                        Command="{Binding RunSmartAnalysisCommand}" 
+                        Padding="15, 10" HorizontalAlignment="Left" Margin="0, 10, 0, 0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Background="Black" CornerRadius="10" Padding="15">
+            <ScrollViewer>
+                <TextBlock Text="{Binding ReportText}" 
+                           Foreground="#00FF00" 
+                           FontFamily="Consolas" 
+                           FontSize="14" 
+                           TextWrapping="Wrap"/>
+            </ScrollViewer>
+        </Border>
+        
+        <Border Grid.Row="2" Background="{DynamicResource SystemRegionBrush}" CornerRadius="10" Padding="15">
+            <StackPanel>
+                <TextBlock Text="Історія списань (writeoffs.json)" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+                <ListBox ItemsSource="{Binding WriteOffHistory}" Background="Transparent">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto, *, Auto, Auto" Margin="0,5">
+                                <TextBlock Grid.Column="0" Text="{Binding Date, StringFormat='{}{0:dd.MM.yyyy HH:mm}'}" Margin="0,0,15,0" Foreground="Gray"/>
+                                <TextBlock Grid.Column="1" Text="{Binding ProductId}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="2" Text="{Binding Reason}" Margin="15,0" Foreground="{DynamicResource BrandPinkBrush}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Quantity, StringFormat='{}- {0} шт.'}" FontWeight="Black"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

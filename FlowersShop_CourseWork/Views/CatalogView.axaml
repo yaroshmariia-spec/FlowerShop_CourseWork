@@ -28,6 +28,14 @@
 
             <ListBox Grid.Row="1" ItemsSource="{Binding Flowers}" SelectedItem="{Binding SelectedFlower}" 
                      Background="Transparent" BorderThickness="0">
+                <ListBox.Styles>
+                    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+                        <Setter Property="Background" Value="Transparent" />
+                    </Style>
+                    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+                        <Setter Property="Background" Value="Transparent" />
+                    </Style>
+                </ListBox.Styles>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Classes="Card" Margin="5" Background="{DynamicResource BrandPinkBrush}">

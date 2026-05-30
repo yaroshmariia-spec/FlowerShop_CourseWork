@@ -59,7 +59,7 @@ namespace FlowersShop_CourseWork.ViewModels
                     CurrentView = new CatalogViewModel();
                     break;
                 case "Orders":
-                    CurrentView = new OrdersViewModel();
+                    CurrentView = new AnalyticsViewModel();
                     break;
                 case "Storefront":
                     CurrentView = new StorefrontViewModel();
