@@ -12,19 +12,19 @@
                    Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,20"/>
 
         <Grid Grid.Row="1" ColumnDefinitions="*, 300">
-            <ItemsControl Grid.Column="0" ItemsSource="{Binding Items}" Margin="0,0,20,0">
+            <ItemsControl ItemsSource="{Binding CartItems}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Classes="Card" Margin="0,0,0,10">
-                            <Grid ColumnDefinitions="*, Auto, Auto">
-                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="18"/>
-                                    <TextBlock Text="{DynamicResource CartStock}" Foreground="{DynamicResource BrandGreenBrush}" FontSize="12"/>
-                                </StackPanel>
-                                <TextBlock Grid.Column="1" Text="{Binding Quantity, StringFormat='{}К-ть: {0}'}" VerticalAlignment="Center" Margin="20,0"/>
-                                <TextBlock Grid.Column="2" Text="{Binding Price}" FontWeight="Bold" Foreground="{DynamicResource BrandPinkBrush}" FontSize="18" VerticalAlignment="Center"/>
-                            </Grid>
-                        </Border>
+                        <Grid ColumnDefinitions="*, Auto, Auto" Margin="0, 0, 0, 15">
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center"/>
+                
+                            <Button Grid.Column="1" Content="❌" Background="Transparent" Margin="10, 0"
+                                    Command="{Binding $parent[UserControl].((vm:CartViewModel)DataContext).RemoveFromCartCommand}"
+                                    CommandParameter="{Binding}"/>
+                        
+                            <TextBlock Grid.Column="2" Text="{Binding Price, StringFormat='{}{0} грн.'}" 
+                                       FontWeight="Black" FontSize="16" Foreground="{DynamicResource BrandPinkBrush}" VerticalAlignment="Center"/>
+                        </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -36,11 +36,11 @@
                     
                     <Grid ColumnDefinitions="*, Auto">
                         <TextBlock Grid.Column="0" Text="{DynamicResource CartPayable}" Foreground="{DynamicResource SystemBaseMediumColor}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding TotalSum}" FontWeight="Black" FontSize="20" Foreground="{DynamicResource BrandPinkBrush}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding TotalPrice, StringFormat='{}{0} грн.'}" FontWeight="Black" FontSize="18" Foreground="{DynamicResource BrandPinkBrush}"/>
                     </Grid>
-
-                    <Button Classes="Primary" Content="{DynamicResource CartMakeOrder}" HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
-                    <TextBlock Text="{DynamicResource CartFreeDelivery}" FontSize="11" Foreground="Gray" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <Button Classes="Primary" Content="Оформити замовлення" 
+                            Command="{Binding CheckoutCommand}" 
+                            Margin="0, 15, 0, 0" HorizontalAlignment="Stretch"/>
                 </StackPanel>
             </Border>
         </Grid>
