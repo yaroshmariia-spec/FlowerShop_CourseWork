@@ -12,10 +12,10 @@
         
         <Border Grid.Row="0" Background="{DynamicResource SystemRegionBrush}" CornerRadius="10" Padding="20">
             <StackPanel Spacing="10">
-                <TextBlock Text="Інтелектуальний аналіз складу" FontWeight="Bold" FontSize="24"/>
-                <TextBlock Text="Алгоритм проаналізує залишки, виявить зіпсовані/прострочені квіти, спише їх та згенерує звіт." TextWrapping="Wrap"/>
+                <TextBlock Text="{DynamicResource Analysis}" FontWeight="Bold" FontSize="24"/>
+                <TextBlock Text="{DynamicResource AlgorithmAnalysis}" TextWrapping="Wrap"/>
                 
-                <Button Classes="Primary" Content="Провести смарт-аналіз та списання" 
+                <Button Classes="Primary" Content="{DynamicResource SmartAnalysis}" 
                         Command="{Binding RunSmartAnalysisCommand}" 
                         Padding="15, 10" HorizontalAlignment="Left" Margin="0, 10, 0, 0"/>
             </StackPanel>
@@ -33,7 +33,7 @@
         
         <Border Grid.Row="2" Background="{DynamicResource SystemRegionBrush}" CornerRadius="10" Padding="15">
             <StackPanel>
-                <TextBlock Text="Історія списань (writeoffs.json)" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+                <TextBlock Text="{DynamicResource HistoryOffs}" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
                 <ListBox ItemsSource="{Binding WriteOffHistory}" Background="Transparent">
                     <ListBox.ItemTemplate>
                         <DataTemplate>

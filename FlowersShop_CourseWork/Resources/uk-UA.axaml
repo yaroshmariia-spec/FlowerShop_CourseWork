@@ -41,10 +41,27 @@
     <system:String x:Key="OrdersReadyToShip">Готово до відправки</system:String>
     <system:String x:Key="OrdersCompleted">Завершені</system:String>
     <system:String x:Key="StoreShopWindow">Вітрина магазину</system:String>
-    <system:String x:Key="OrdersHIT">ХІТ</system:String>
     <system:String x:Key="OrdersInBasket">В кошик</system:String>
-    <system:String x:Key="OrdersProgress">В обробці</system:String>
-    <system:String x:Key="MenuOrder">Замовлення</system:String>
+    <system:String x:Key="MenuAnalytics">Аналітика</system:String>
     <system:String x:Key="MenuShowCase">Вітрина</system:String>
-    
+    <system:String x:Key="ReportTitle">=== АНАЛІТИЧНИЙ ЗВІТ ПРО СПИСАННЯ ПРОДУКЦІЇ ===</system:String>
+    <system:String x:Key="ReportDate">Дата генерації</system:String>
+    <system:String x:Key="ReportAdmin">Адміністратор</system:String>
+    <system:String x:Key="ReportCheckResults">Результати перевірки складу:</system:String>
+    <system:String x:Key="ReportWrittenOffWord">СПИСАНО</system:String>
+    <system:String x:Key="ReportQtyWord">К-ть (шт.)</system:String>
+    <system:String x:Key="ReportReasonWord">Причина</system:String>
+    <system:String x:Key="ReasonDamaged">Пошкоджено при зберіганні</system:String>
+    <system:String x:Key="ReasonExpired">Прострочено (зів'яли)</system:String>
+    <system:String x:Key="ReportTotalWrittenOff">Загалом списано одиниць товару: {0}. Базу даних оновлено.</system:String>
+    <system:String x:Key="ReportAllGood">Усі товари в нормі. Прострочених або пошкоджених квітів не виявлено.</system:String>
+    <system:String x:Key="LogAnalysisPerformed">Користувач {0} провів аналіз списання. Списано: {1} шт.</system:String>
+    <system:String x:Key="Analysis">Інтелектуальний аналіз складу</system:String>
+    <system:String x:Key="AlgorithmAnalysis">Алгоритм проаналізує залишки, виявить зіпсовані/прострочені квіти, спише їх та згенерує звіт.</system:String>
+    <system:String x:Key="SmartAnalysis">Провести смарт-аналіз та списання</system:String>
+    <system:String x:Key="HistoryOffs">Історія списань</system:String>
+    <system:String x:Key="MakeOrder">Оформити замовлення</system:String>
+    <system:String x:Key="OrderSearching">Пошук за назвою...</system:String>
+    <system:String x:Key="OrderHIT">ХІТ</system:String>
+   
 </ResourceDictionary>

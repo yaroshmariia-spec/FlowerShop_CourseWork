@@ -38,7 +38,7 @@
                         <TextBlock Grid.Column="0" Text="{DynamicResource CartPayable}" Foreground="{DynamicResource SystemBaseMediumColor}"/>
                         <TextBlock Grid.Column="1" Text="{Binding TotalPrice, StringFormat='{}{0} грн.'}" FontWeight="Black" FontSize="18" Foreground="{DynamicResource BrandPinkBrush}"/>
                     </Grid>
-                    <Button Classes="Primary" Content="Оформити замовлення" 
+                    <Button Classes="Primary" Content="{DynamicResource MakeOrder}" 
                             Command="{Binding CheckoutCommand}" 
                             Margin="0, 15, 0, 0" HorizontalAlignment="Stretch"/>
                 </StackPanel>

@@ -15,7 +15,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="15" Margin="0, 0, 0, 20">
             
                 <TextBox Text="{Binding SearchText}" 
-                         Watermark="Пошук за назвою..." 
+                         Watermark="{DynamicResource OrderSearching}" 
                          Width="300" 
                          CornerRadius="5"/>
             
@@ -41,7 +41,7 @@
                                     <Grid>
                                         <Border IsVisible="False" Background="#FFD700" CornerRadius="5"
                                                 Padding="8, 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-                                            <TextBlock Text="ХІТ" FontWeight="Bold" FontSize="10" Foreground="Black"/>
+                                            <TextBlock Text="{DynamicResource OrderHIT}" FontWeight="Bold" FontSize="10" Foreground="Black"/>
                                         </Border>
                         
                                         <TextBlock Text="🌸" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -57,7 +57,7 @@
                                                FontWeight="Black" FontSize="18"
                                                Foreground="{DynamicResource BrandPinkBrush}" VerticalAlignment="Center"/>
                     
-                                    <Button Grid.Column="1" Classes="Primary" Content="В кошик"
+                                    <Button Grid.Column="1" Classes="Primary" Content="{DynamicResource OrdersInBasket}"
                                             Command="{Binding $parent[UserControl].((vm:StorefrontViewModel)DataContext).AddToCartCommand}"
                                             CommandParameter="{Binding}"    
                                             Padding="10, 5"/>

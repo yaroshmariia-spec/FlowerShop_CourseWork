@@ -2,6 +2,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
+using Avalonia;
+using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FlowersShop_CourseWork.Models;
@@ -30,10 +32,10 @@ public partial class AnalyticsViewModel : ViewModelBase
         var writeOffService = new WriteOffService();
 
         var reportBuilder = new StringBuilder();
-        reportBuilder.AppendLine("=== АНАЛІТИЧНИЙ ЗВІТ ПРО СПИСАННЯ ПРОДУКЦІЇ ===");
-        reportBuilder.AppendLine($"Дата генерації: {DateTime.Now}");
-        reportBuilder.AppendLine($"Адміністратор: {Session.CurrentUser?.Email ?? "System"}\n");
-        reportBuilder.AppendLine("Результати перевірки складу:");
+        reportBuilder.AppendLine(GetLocalizedString("ReportTitle")); 
+        reportBuilder.AppendLine($"{GetLocalizedString("ReportDate")}: {DateTime.Now}");
+        reportBuilder.AppendLine($"{GetLocalizedString("ReportAdmin")}: {Session.CurrentUser?.Email ?? "System"}\n");
+        reportBuilder.AppendLine(GetLocalizedString("ReportCheckResults"));
 
         int totalWrittenOff = 0;
         bool changesMade = false;
@@ -42,15 +44,18 @@ public partial class AnalyticsViewModel : ViewModelBase
         {
             int quantityToWriteOff = 0;
             string reason = "";
-            if (flower.StockQuantity > 50)
+            string reasonKey = "";
+            if (flower.StockQuantity > 50)  
             {
                 quantityToWriteOff = 2;
                 reason = "Damaged";
+                reasonKey = "ReasonDamaged";
             }
             else if (flower.Price < 100 && flower.StockQuantity > 5 && flower.StockQuantity < 20)
             {
                 quantityToWriteOff = 1;
                 reason = "Expired";
+                reasonKey = "ReasonExpired";    
             }
             
             if (quantityToWriteOff > 0 && flower.StockQuantity >= quantityToWriteOff)
@@ -69,25 +74,40 @@ public partial class AnalyticsViewModel : ViewModelBase
 
                 writeOffService.SaveWriteOff(writeOff); 
                 WriteOffHistory.Add(writeOff); 
+                string writtenOffWord = GetLocalizedString("ReportWrittenOffWord");
+                string qtyWord = GetLocalizedString("ReportQtyWord");
+                string reasonWord = GetLocalizedString("ReportReasonWord");
+                string translatedReason = GetLocalizedString(reasonKey);
 
-                reportBuilder.AppendLine(
-                    $"- [СПИСАНО] {flower.Name} | К-ть: {quantityToWriteOff} шт. | Причина: {reason}");
+                reportBuilder.AppendLine($"- [СПИСАНО] {flower.Name} | К-ть: {quantityToWriteOff} шт. | Причина: {reason}");
             }
         }
 
         if (changesMade)
         {
             fileService.SaveData(inventory);
-            reportBuilder.AppendLine($"\nЗагалом списано одиниць товару: {totalWrittenOff}. Базу даних оновлено.");
+            string totalTemplate = GetLocalizedString("ReportTotalWrittenOff");
+            reportBuilder.AppendLine($"\n{string.Format(totalTemplate, totalWrittenOff)}");
         }
         else
         {
-            reportBuilder.AppendLine("\nУсі товари в нормі. Прострочених або пошкоджених квітів не виявлено.");
+            reportBuilder.AppendLine($"\n{GetLocalizedString("ReportAllGood")}");
         }
         ReportText = reportBuilder.ToString();
         File.WriteAllText("report.txt", ReportText);
         
-        File.AppendAllText("log.txt",
-            $"{DateTime.Now} - Admin провів аналіз списання. Списано: {totalWrittenOff} шт.\n");
+        string logTemplate = GetLocalizedString("LogAnalysisPerformed");
+        File.AppendAllText("log.txt", $"{DateTime.Now} - {string.Format(logTemplate, "Admin", totalWrittenOff)}\n");
+    }
+    private string GetLocalizedString(string key)
+    {
+        if (Application.Current != null && 
+            Application.Current.TryFindResource(key, out object resource) && 
+            resource is string translatedText)
+        {
+            return translatedText;
+        }
+        
+        return key; 
     }
 }

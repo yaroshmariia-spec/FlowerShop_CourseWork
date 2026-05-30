@@ -28,7 +28,7 @@
                             CommandParameter="Catalog"
                             HorizontalAlignment="Stretch" Background="Transparent"
                             Foreground="{DynamicResource SystemBaseHighColor}" FontSize="16" />
-                    <Button Content="{DynamicResource MenuOrder}" IsVisible="{Binding IsAdmin}"
+                    <Button Content="{DynamicResource MenuAnalytics}" IsVisible="{Binding IsAdmin}"
                             Command="{Binding NavigateToCommand}" CommandParameter="Orders" FontSize="16"
                             HorizontalAlignment="Stretch" Background="Transparent"
                             Foreground="{DynamicResource SystemBaseHighColor}" />
